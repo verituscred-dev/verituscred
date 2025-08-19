@@ -173,8 +173,8 @@ Mensagem: {mensagem}
         send_mail(
             assunto,
             corpo,
-            'no-reply@revisaosegura.com.br',
-            ['contato@revisaosegura.com.br'],
+            'no-reply@verituscred.com.br',
+            ['contato@verituscred.com.br'],
             fail_silently=False,
         )
 

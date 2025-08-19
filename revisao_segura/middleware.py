@@ -6,7 +6,7 @@ class WWWRedirectMiddleware:
 
     def __call__(self, request):
         host = request.get_host()
-        if host == "revisaosegura.com.br":
-            return HttpResponsePermanentRedirect("https://www.revisaosegura.com.br" + request.get_full_path())
+        if host == "verituscred.com.br":
+            return HttpResponsePermanentRedirect("https://www.verituscred.com.br" + request.get_full_path())
         return self.get_response(request)
  
