@@ -33,8 +33,8 @@ Mensagem: {mensagem}
         send_mail(
             assunto,
             corpo,
-            'contato@revisaosegura.com.br',
-            ['contato@revisaosegura.com.br'],
+            'contato@verituscred.com.br',
+            ['contato@verituscred.com.br'],
             fail_silently=False,
         )
 
@@ -81,8 +81,8 @@ Parcelas pagas: {parcelas_pagas}
 Valor da parcela: {valor_parcela}
 Mensagem: {mensagem or "Nenhuma"}
             ''',
-            from_email='contato@revisaosegura.com.br',
-            recipient_list=['cadastro@revisaosegura.com.br'],
+              from_email='contato@verituscred.com.br',
+              recipient_list=['cadastro@verituscred.com.br'],
             fail_silently=False,
         )
 
@@ -124,8 +124,8 @@ Valor solicitado: {valor_total}
 Renda mensal: {renda_mensal}
 Mensagem: {mensagem or "Nenhuma"}
             ''',
-            from_email='contato@revisaosegura.com.br',
-            recipient_list=['cadastro@revisaosegura.com.br'],
+              from_email='contato@verituscred.com.br',
+              recipient_list=['cadastro@verituscred.com.br'],
             fail_silently=False,
         )
 

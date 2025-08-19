@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 🔹 Configuração do Django
 SECRET_KEY = config("DJANGO_SECRET_KEY", default="fallback_key_should_be_removed")
 DEBUG = False
-ALLOWED_HOSTS = ["www.revisaosegura.com.br", "revisaosegura.com.br", "127.0.0.1", "localhost", "siterevisaosegura.onrender.com"]
+ALLOWED_HOSTS = ["www.verituscred.com.br", "verituscred.com.br", "127.0.0.1", "localhost"]
 ROOT_URLCONF = "revisao_segura.urls"
 
 # 🔹 Configuração do Banco de Dados PostgreSQL
@@ -131,8 +131,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'contato@revisaosegura.com.br' # ou o e-mail que você usa no Zoho
-EMAIL_HOST_PASSWORD = 'Revisao@2025'  # senha real ou senha de aplicativo
+EMAIL_HOST_USER = 'contato@verituscred.com.br' # ou o e-mail que você usa no Zoho
+EMAIL_HOST_PASSWORD = 'Veritus.2025'  # senha real ou senha de aplicativo
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # 🔹 Configuração de segurança
