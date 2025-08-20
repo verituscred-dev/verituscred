@@ -6,10 +6,10 @@
     <title>{% block title %}Veritus Cred - Soluções em Empréstimo{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f5f7fa;
             color: #1a1a1a;
         }
@@ -23,6 +23,23 @@
         }
         .navbar-toggler {
             border-color: white;
+        }
+        .btn-modern {
+            background: linear-gradient(90deg, #0d6efd, #00c9ff);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform .2s, box-shadow .2s, opacity .3s;
+        }
+        .btn-modern:hover {
+            opacity: .95;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         }
         .hero {
             position: relative;
@@ -52,37 +69,14 @@
         }
         .hero h1 {
             font-size: 2.8rem;
-            font-weight: bold;
+            font-weight: 700;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             margin-bottom: 10px;
-        }
-        .hero button {
-            background: linear-gradient(90deg, #0d6efd, #00c9ff);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.3s ease;
-        }
-        .hero button:hover {
-            opacity: 0.9;
         }
         .hero p {
             font-size: 1.2rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
-        }
-        .cta-button {
-            background: linear-gradient(90deg, #0d6efd, #00c9ff) !important;
-            color: white !important;
-            font-weight: bold;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2rem;
         }
         .features {
             background-color: #f0f4f8;
@@ -114,6 +108,17 @@
             padding: 20px 0;
             text-align: center;
         }
+        @media (max-width: 768px) {
+            .hero {
+                height: 300px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,9 +140,9 @@
                     <li class="nav-item"><a class="nav-link" href="/simule/">Simular Empréstimo</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contato/">Contato</a></li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="nav-link btn btn-warning text-dark px-3 ms-2 btn-responsive" href="/usuarios/dashboard/">Área do Cliente</a></li>
+                        <li class="nav-item"><a class="nav-link btn-modern px-3 ms-2 btn-responsive" href="/usuarios/dashboard/">Área do Cliente</a></li>
                     {% else %}
-                        <li class="nav-item"><a class="nav-link btn btn-light text-dark px-3 ms-2 btn-responsive" href="/usuarios/login/">Área do Cliente</a></li>
+                        <li class="nav-item"><a class="nav-link btn-modern px-3 ms-2 btn-responsive" href="/usuarios/login/">Área do Cliente</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -148,8 +153,8 @@
     {% if request.path == "/" %}
       <div class="hero">
         <h1>Encontre o Empréstimo Ideal</h1>
-        <p>Compare opções e contrate o crédito que cabe no seu bolso.</p>
-    <button onclick="window.location.href='/simule/'">Simular agora</button>
+        <p>Compare opções e conquiste o crédito perfeito para você.</p>
+        <button class="btn-modern mt-3 w-100 w-md-auto" onclick="window.location.href='/simule/'">Simular agora</button>
     </div>
 
     <div class="features">
@@ -175,28 +180,19 @@
 <div class="row mt-4">
     <div class="col-12">
         <div class="alert alert-success p-4 text-center shadow-sm" style="font-size: 1.2rem;">
-            <strong>NOVIDADE:</strong> Agora também oferecemos <strong>empréstimos consignados em parceria com grandes empresas</strong>! E o melhor: <span class="text-danger fw-bold">mesmo negativados podem contratar</span>, sem precisar apresentar bens como garantia.
+            <strong>NOVIDADE:</strong> Empréstimos consignados em parceria com grandes empresas! Mesmo negativados têm crédito aprovado sem precisar usar bens como garantia.
+            <span class="d-block mt-2">Realize seus planos com crédito acessível. Faça uma simulação gratuita e encontre a melhor opção para você.</span>
+            <a href="/simule/" class="btn-modern mt-3 w-100 w-md-auto">Simular Empréstimo</a>
         </div>
     </div>
 </div>
-<div class="mt-3">
-    <a href="/simule/" class="btn btn-success btn-lg fw-bold shadow">Solicitar Simulação de Empréstimo</a>
-</div>
-
- <div class="mt-5 text-center">
-     <h4 class="fw-bold">Realize seus planos com crédito acessível.</h4>
-     <p class="lead">Faça uma simulação gratuita e encontre a melhor opção para você.</p>
-     <a href="/simule/" class="btn btn-success btn-lg fw-bold shadow mt-2">Simular Empréstimo</a>
-             </div>
-        </div>
-    </div>
 
     <div class="container about">
         <div class="row align-items-center">
             <div class="col-md-6 col-12 text-center text-md-start">
                 <h2>Sobre Nós</h2>
                 <p>Somos especialistas em crédito pessoal e consignado. Nosso objetivo é oferecer soluções de empréstimo transparentes e seguras para ajudar você a alcançar seus objetivos.</p>
-                <a href="/sobre/" class="btn btn-primary btn-responsive">Saiba Mais</a>
+                <a href="/sobre/" class="btn-modern btn-responsive">Saiba Mais</a>
             </div>
             <div class="col-md-6 col-12 mt-4 mt-md-0">
                 <img src="/static/images/about.jpg" alt="Sobre Nós" class="img-fluid">
