@@ -53,7 +53,7 @@
                 <label for="arquivo" class="form-label">Escolha um arquivo PDF:</label>
                 <input type="file" name="arquivo" id="arquivo" class="form-control" accept="application/pdf" required>
             </div>
-            <button type="submit" class="btn btn-success w-100">
+            <button type="submit" class="btn-modern w-100">
                 <i class="fas fa-paper-plane"></i> Enviar Documento
             </button>
         </form>
@@ -92,7 +92,7 @@
                         <i class="fas fa-file-pdf text-primary"></i>
                         <a href="{{ documento.arquivo.url }}" target="_blank">{{ documento.titulo }}</a>
                     </span>
-                    <a href="{{ documento.arquivo.url }}" class="btn btn-primary btn-sm">
+                    <a href="{{ documento.arquivo.url }}" class="btn-modern btn-sm">
                         <i class="fas fa-download"></i> Baixar
                     </a>
                 </li>
@@ -105,19 +105,19 @@
     {% else %}
         <p class="text-center text-muted">Você precisa estar logado para acessar esta página.</p>
         <div class="text-center">
-            <a href="{% url 'login' %}" class="btn btn-primary">Ir para Login</a>
+            <a href="{% url 'login' %}" class="btn-modern">Ir para Login</a>
         </div>
     {% endif %}
 
     <div class="text-center mt-4 d-grid gap-2 d-md-flex justify-content-md-center">
         {% if user.is_authenticated %}
-        <a href="{% url 'perfil' %}" class="btn btn-info btn-lg">
+        <a href="{% url 'perfil' %}" class="btn-modern btn-lg">
             <i class="fas fa-user"></i> Ver Perfil
         </a>
-        <a href="{% url 'editar_perfil' %}" class="btn btn-warning btn-lg">
+        <a href="{% url 'editar_perfil' %}" class="btn-modern btn-lg">
             <i class="fas fa-edit"></i> Editar Perfil
         </a>
-        <a href="{% url 'listar_boletos' %}" class="btn btn-primary btn-lg">
+        <a href="{% url 'listar_boletos' %}" class="btn-modern btn-lg">
             <i class="fas fa-receipt"></i> Meus Boletos
         </a>
         <form action="{% url 'logout' %}" method="post" class="d-inline">

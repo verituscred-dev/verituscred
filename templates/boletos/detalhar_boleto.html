@@ -27,7 +27,7 @@
         </p>
 
         {% if boleto.arquivo %}
-            <a href="{{ boleto.arquivo.url }}" class="btn btn-success mt-4 w-100" target="_blank">
+            <a href="{{ boleto.arquivo.url }}" class="btn-modern mt-4 w-100" target="_blank">
                 <i class="fas fa-download"></i> Baixar Boleto
             </a>
         {% else %}
@@ -38,7 +38,7 @@
     </div>
 
     <div class="text-center mt-4">
-        <a href="{% url 'listar_boletos' %}" class="btn btn-outline-primary">
+        <a href="{% url 'listar_boletos' %}" class="btn-modern">
             <i class="fas fa-arrow-left"></i> Voltar para Lista de Boletos
         </a>
     </div>
