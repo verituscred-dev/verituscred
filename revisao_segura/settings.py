@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 🔹 Configuração do Django
 SECRET_KEY = config("DJANGO_SECRET_KEY", default="fallback_key_should_be_removed")
 DEBUG = False
-ALLOWED_HOSTS = ["www.verituscred.com.br", "verituscred.com.br", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["www.verituscred.com.br", "verituscred.com.br", "verituscred.onrender.com", "127.0.0.1", "localhost"]
 ROOT_URLCONF = "revisao_segura.urls"
 
 # 🔹 Configuração do Banco de Dados PostgreSQL
