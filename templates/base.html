@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Veritus Cred - Empréstimos e Revisão de Juros{% endblock %}</title>
+    <title>{% block title %}Veritus Cred - Soluções em Empréstimo{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #dcdcdc; /* 🔹 Cinza claro */
+            background-color: #f8f9fa;
         }
         .navbar {
             padding: 15px;
@@ -115,7 +115,6 @@
                     <li class="nav-item"><a class="nav-link" href="/">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="/sobre/">Sobre Nós</a></li>
                     <li class="nav-item"><a class="nav-link" href="/servicos/">Nossos Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/calculo/">Solicitar Cálculo</a></li>
                     <li class="nav-item"><a class="nav-link" href="/simule/">Simular Empréstimo</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contato/">Contato</a></li>
                     {% if user.is_authenticated %}
@@ -130,31 +129,31 @@
 
     <!-- SEÇÃO HERO APENAS NA PÁGINA INICIAL -->
     {% if request.path == "/" %}
-    <div class="hero">
-        <h1>Elimine Juros Abusivos Agora!</h1>
-        <p>Te ajudamos a recuperar valores cobrados indevidamente em financiamentos, empréstimos e contratos.</p>
-    <button onclick="window.location.href='/calculo/'">Solicitar Cálculo</button>
+      <div class="hero">
+        <h1>Encontre o Empréstimo Ideal</h1>
+        <p>Compare opções e contrate o crédito que cabe no seu bolso.</p>
+    <button onclick="window.location.href='/simule/'">Simular agora</button>
     </div>
 
     <div class="features">
-<h2>Por que Escolher a Veritus Cred?</h2>
-<div class="row mt-4">
-    <div class="col-md-4 col-12 mb-4">
-        <img src="/static/images/icon1.jpg" alt="Especialistas" class="img-fluid rounded">
-        <h5 class="mt-3 fw-bold">Especialistas em Juros Abusivos</h5>
-        <p>Atuamos exclusivamente com revisão de contratos financeiros. Temos conhecimento técnico e jurídico para garantir justiça ao seu bolso.</p>
-    </div>
-    <div class="col-md-4 col-12 mb-4">
-        <img src="/static/images/icon2.jpg" alt="Agilidade" class="img-fluid rounded">
-        <h5 class="mt-3 fw-bold">Atendimento Ágil e 100% Online</h5>
-        <p>Você resolve tudo direto do seu celular. Analisamos sua situação e apresentamos soluções de forma simples e rápida.</p>
-    </div>
-    <div class="col-md-4 col-12 mb-4">
-        <img src="/static/images/icon3.jpg" alt="Resultados" class="img-fluid rounded">
-        <h5 class="mt-3 fw-bold">Resultados Comprovados</h5>
-        <p>Mais de R$ 10 milhões recuperados para nossos clientes. Redução de parcelas, cancelamento de dívidas e devolução de valores pagos a mais.</p>
-    </div>
-</div>
+ <h2>Por que Escolher a Veritus Cred?</h2>
+ <div class="row mt-4">
+     <div class="col-md-4 col-12 mb-4">
+         <img src="/static/images/icon1.jpg" alt="Opções de Crédito" class="img-fluid rounded">
+         <h5 class="mt-3 fw-bold">Diversas Modalidades</h5>
+         <p>Trabalhamos com crédito pessoal, consignado e financiamento para atender diferentes necessidades.</p>
+     </div>
+     <div class="col-md-4 col-12 mb-4">
+         <img src="/static/images/icon2.jpg" alt="Agilidade" class="img-fluid rounded">
+         <h5 class="mt-3 fw-bold">Atendimento Ágil e 100% Online</h5>
+         <p>Você resolve tudo direto do seu celular. Analisamos sua solicitação e apresentamos propostas rapidamente.</p>
+     </div>
+     <div class="col-md-4 col-12 mb-4">
+         <img src="/static/images/icon3.jpg" alt="Taxas" class="img-fluid rounded">
+         <h5 class="mt-3 fw-bold">Taxas Competitivas</h5>
+         <p>Parceiros de confiança oferecem condições especiais para que o crédito caiba no seu orçamento.</p>
+     </div>
+ </div>
 
 <div class="row mt-4">
     <div class="col-12">
@@ -167,11 +166,11 @@
     <a href="/simule/" class="btn btn-success btn-lg fw-bold shadow">Solicitar Simulação de Empréstimo</a>
 </div>
 
-<div class="mt-5 text-center">
-    <h4 class="fw-bold">Recupere o que é seu por direito.</h4>
-    <p class="lead">Faça uma simulação gratuita e descubra quanto você pode economizar ou receber de volta.</p>
-    <a href="/calculo/" class="btn btn-success btn-lg fw-bold shadow mt-2">Solicitar Cálculo</a>
-            </div>
+ <div class="mt-5 text-center">
+     <h4 class="fw-bold">Realize seus planos com crédito acessível.</h4>
+     <p class="lead">Faça uma simulação gratuita e encontre a melhor opção para você.</p>
+     <a href="/simule/" class="btn btn-success btn-lg fw-bold shadow mt-2">Simular Empréstimo</a>
+             </div>
         </div>
     </div>
 
@@ -179,7 +178,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-12 text-center text-md-start">
                 <h2>Sobre Nós</h2>
-                <p>Somos especialistas na identificação e eliminação de juros abusivos em contratos financeiros. Nosso objetivo é proteger os seus direitos, ajudar você a recuperar valores cobrados indevidamente, eliminar juros abusivos e garantir justiça financeira.</p>
+                <p>Somos especialistas em crédito pessoal e consignado. Nosso objetivo é oferecer soluções de empréstimo transparentes e seguras para ajudar você a alcançar seus objetivos.</p>
                 <a href="/sobre/" class="btn btn-primary btn-responsive">Saiba Mais</a>
             </div>
             <div class="col-md-6 col-12 mt-4 mt-md-0">
